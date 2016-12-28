@@ -42,5 +42,6 @@ payment_page.press_pay_now()
 
 assert payment_page.was_payment_declined()
 
-time.sleep(10) #time to notice the result
+delay_to_notice_results = 10
+time.sleep(delay_to_notice_results) 
 driver.quit()
