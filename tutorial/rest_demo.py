@@ -1,6 +1,9 @@
 import requests
-url = 'http://ES_search_demo.com/document/record/_search?pretty=true'
-data = '''{
+
+
+class EsSearchDemoRequester():
+    url = 'http://ES_search_demo.com/document/record/_search?pretty=true'
+    data = '''{
   "query": {
     "bool": {
       "must": [
@@ -24,4 +27,7 @@ data = '''{
   "sort": [],
   "facets": {}
 }'''
-response = requests.post(url, data=data)
+
+
+requester = EsSearchDemoRequester();
+response = requests.post(requester.url, data=requester.data)

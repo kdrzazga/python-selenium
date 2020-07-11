@@ -1,5 +1,6 @@
 import wx, wx.html
 import sys
+#https://wiki.wxpython.org/wxPython%20by%20Example
 
 aboutText = """<p>Sorry, there is no information about this program. It is
 running on version %(wxpy)s of <b>wxPython</b> and %(python)s of <b>Python</b>.
