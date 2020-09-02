@@ -1,5 +1,6 @@
 import wx
 
+
 app = wx.App()
 window = wx.Frame(None, title="wxPython Frame", size=(300, 200))
 panel = wx.Panel(window)
