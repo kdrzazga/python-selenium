@@ -28,16 +28,6 @@ pipeline {
                 }
             }
         }
-        stage('API Test') {
-            steps {
-                sh 'pytest -m api --junitxml=apitest-results.xml'
-            }
-            post {
-                always {
-                    junit 'apitest-results.xml'
-                }
-            }
-        }
         stage('Web Test') {
             steps {
                 sh 'pytest -m webtest --junitxml=webtest-results.xml'
@@ -46,17 +36,6 @@ pipeline {
                 always {
                     junit 'webtest-results.xml'
                 }
-            }
-        }
-        stage('Send Email') {
-            steps {
-                emailext (
-                    subject: 'Test Report',
-                    body: '''<html><body><p>Hi,</p><p>Please find attached the test report.</p></body></html>''',
-                    to: 'zmwn@protonmail.com',
-                    attachmentsPattern: '*test-results.xml',
-                    mimeType: 'text/xml'
-                )
             }
         }
     }

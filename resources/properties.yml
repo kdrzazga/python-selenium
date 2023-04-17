@@ -1,5 +1,10 @@
-selenium-easy:
-  main-page: https://demo.seleniumeasy.com/
+url:
+  selenium-easy:
+    main-page: https://demo.seleniumeasy.com/
 
-the-internet:
-  main-page: https://the-internet.herokuapp.com/
+  the-internet:
+    main-page: https://the-internet.herokuapp.com/
+
+path:
+  chromedriver: resources\\webdriver\\112\\chromedriver.exe
+
