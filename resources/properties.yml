@@ -6,5 +6,6 @@ url:
     main-page: https://the-internet.herokuapp.com/
 
 path:
-  chromedriver: resources\\webdriver\\112\\chromedriver.exe
+  chromedriver: resources\webdriver\112\chromedriver.exe
 
+text:

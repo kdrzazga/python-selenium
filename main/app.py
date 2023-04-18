@@ -1,4 +1,4 @@
-from main.utills.files import read_yaml_file
+from main.utils.files import read_yaml_file
 
 
 def init():

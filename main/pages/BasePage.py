@@ -3,14 +3,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from main.utills import webdrivermgr
+from main.utils import webdrivermgr
 
 
 class BasePage:
 
     def __init__(self):
         self.url = ""
-        self._driver = webdrivermgr.create_chromedriver()
+        self.driver = webdrivermgr.create_chromedriver()
 
     def wait_for_element(self, by, locator):
         wait = WebDriverWait(self.driver, 30)
