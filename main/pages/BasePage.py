@@ -9,7 +9,7 @@ from main.utills import webdrivermgr
 class BasePage:
 
     def __init__(self):
-        self._url = ""
+        self.url = ""
         self._driver = webdrivermgr.create_chromedriver()
 
     def wait_for_element(self, by, locator):
