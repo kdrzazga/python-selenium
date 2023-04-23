@@ -1,3 +1,4 @@
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,9 +9,9 @@ from main.utils import webdrivermgr
 
 class BasePage:
 
-    def __init__(self):
+    def __init__(self, driver: WebDriver):
         self.url = ""
-        self.driver = webdrivermgr.create_chromedriver()
+        self.driver = driver
 
     def wait_for_element(self, by, locator):
         wait = WebDriverWait(self.driver, 30)

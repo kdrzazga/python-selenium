@@ -1,22 +1,21 @@
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
 from main.pages.BasePage import BasePage
 from main.utils.files import read_yaml_file
-from main.utils.locators_helper import quietly_find_element
 
 
 class HomePage(BasePage):
-    def __init__(self):
-        super().__init__()
-        self.subheader = None #declaration
+    def __init__(self, driver: WebDriver):
+        super().__init__(driver)
+        self.subheader = None  # declaration
         self.header = None
         self.url = read_yaml_file()["url"]["the-internet"]["main-page"]
+        self.driver = driver
 
     def find_elements(self):
-        self.wait_for_element(By.CSS_SELECTOR, "h1")
-        self.header = self.driver.find_element(By.CSS_SELECTOR, "h1")
-        self.wait_for_element(By.CSS_SELECTOR, "h2")
-        self.subheader = self.driver.find_element(By.CSS_SELECTOR, "h2")
+        self.header = self.driver.find_element(By.TAG_NAME, 'h1')
+        self.subheader = self.driver.find_element(By.TAG_NAME, 'h2')
 
     def check_header(self, expected_text):
         actual_text = self.header.text
